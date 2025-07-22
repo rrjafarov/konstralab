@@ -110,7 +110,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-export default function MobileHoverCards({ production }) {
+export default function MobileHoverCards({ production,t }) {
   // API'den gelen asıl dizi
   const productionItems = production.data.data;
 
@@ -139,7 +139,8 @@ export default function MobileHoverCards({ production }) {
     <section id="production">
       <div className="mobileHoverCards">
         <div className="cardsSectionTitleHoverMobile">
-          From Raw Materials to Final <strong>Products</strong>
+          {/* From Raw Materials to Final <strong>Products</strong> */}
+          {t?.productionTitle || "From Raw Materials to Final Products"}
         </div>
 
         <div className="mySwiper" style={{ position: "relative", overflow: "hidden" }}>

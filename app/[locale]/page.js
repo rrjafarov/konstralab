@@ -1,3 +1,4 @@
+
 // "use client";
 // import About from "@/components/About";
 // import Brands from "@/components/Brands";
@@ -10,7 +11,7 @@
 // import Slider from "@/components/Slider";
 // import Image from "next/image";
 // import React, { useState, useEffect, useCallback } from "react";
-// import { cookies } from "next/headers";
+// import Cookies from "js-cookie";
 // import axiosInstance from "@/lib/axios";
 
 // export default function HomePage() {
@@ -18,15 +19,20 @@
 //   const [isFading, setIsFading] = useState(false);
 //   const [isMobile, setIsMobile] = useState(false);
 //   const [about, setAbout] = useState(null);
+//   const [contact, setContact] = useState(null);
+//   const [gallery, setGallery] = useState(null);
+//   const [entryPage, setEntryPage] = useState(null);
+//   const [brands, setBrands] = useState(null);
+//   const [products, setProducts] = useState(null);
+//   const [production, setProduction] = useState(null);
 
-//   // 3) Client-side data fetch useEffect’i
+//   // About verisi
 //   useEffect(() => {
 //     async function fetchAboutPageData() {
 //       const lang = Cookies.get("NEXT_LOCALE") || "en";
 //       try {
 //         const { data } = await axiosInstance.get(`/page-data/about`, {
 //           headers: { Lang: lang },
-//           cache: "no-store",
 //         });
 //         setAbout(data);
 //       } catch (error) {
@@ -36,24 +42,122 @@
 //     fetchAboutPageData();
 //   }, []);
 
+//   // Contact verisi
+//   useEffect(() => {
+//     async function fetchContactPageData() {
+//       const lang = Cookies.get("NEXT_LOCALE") || "en";
+//       try {
+//         const { data } = await axiosInstance.get(`/page-data/contact`, {
+//           headers: { Lang: lang },
+//         });
+//         setContact(data);
+//       } catch (error) {
+//         console.error("Failed to fetch contact page data", error);
+//       }
+//     }
+//     fetchContactPageData();
+//   }, []);
+
+//   // Gallery verisi
+//   useEffect(() => {
+//     async function fetchGalleryPageData() {
+//       const lang = Cookies.get("NEXT_LOCALE") || "en";
+//       try {
+//         const { data } = await axiosInstance.get(`/page-data/gallery`, {
+//           headers: { Lang: lang },
+//         });
+//         setGallery(data);
+//       } catch (error) {
+//         console.error("Failed to fetch gallery page data", error);
+//       }
+//     }
+//     fetchGalleryPageData();
+//   }, []);
+
+//   // EntryPage verisi
+//   useEffect(() => {
+//     async function fetchEntryPageData() {
+//       const lang = Cookies.get("NEXT_LOCALE") || "en";
+//       try {
+//         const { data } = await axiosInstance.get(`/page-data/entry-page`, {
+//           headers: { Lang: lang },
+//         });
+//         setEntryPage(data);
+//       } catch (error) {
+//         console.error("Failed to fetch entry page data", error);
+//       }
+//     }
+//     fetchEntryPageData();
+//   }, []);
+
+//   useEffect(() => {
+//     async function fetchBrandsData() {
+//       const lang = Cookies.get("NEXT_LOCALE") || "en";
+//       try {
+//         const { data } = await axiosInstance.get(`/page-data/brands`, {
+//           headers: { Lang: lang },
+//         });
+//         setBrands(data);
+//       } catch (error) {
+//         console.error("Failed to fetch brands page data", error);
+//       }
+//     }
+//     fetchBrandsData();
+//   }, []);
+
+//   useEffect(() => {
+//     async function fetchProducsData() {
+//       const lang = Cookies.get("NEXT_LOCALE") || "en";
+//       try {
+//         const { data } = await axiosInstance.get(`/page-data/products`, {
+//           headers: { Lang: lang },
+//         });
+//         setProducts(data);
+//       } catch (error) {
+//         console.error("Failed to fetch products page data", error);
+//       }
+//     }
+//     fetchProducsData();
+//   }, []);
+
+//   useEffect(() => {
+//     async function fetchProductionData() {
+//       const lang = Cookies.get("NEXT_LOCALE") || "en";
+//       try {
+//         const { data } = await axiosInstance.get(`/page-data/production`, {
+//           headers: { Lang: lang },
+//         });
+//         setProduction(data);
+//       } catch (error) {
+//         console.error("Failed to fetch products page data", error);
+//       }
+//     }
+//     fetchProductionData();
+//   }, []);
+
+
+
+
+
+
+
+//   // Mobil kontrolü
 //   useEffect(() => {
 //     function checkIsMobile() {
 //       setIsMobile(window.innerWidth <= 768);
 //     }
-
 //     checkIsMobile();
-
 //     window.addEventListener("resize", checkIsMobile);
 //     return () => window.removeEventListener("resize", checkIsMobile);
 //   }, []);
 
+//   // Overlay kapanma animasyonu
 //   const finish = useCallback(() => {
 //     setIsFading(true);
 //     setTimeout(() => {
 //       setShowOverlay(false);
 //     }, 500);
 //   }, []);
-
 //   useEffect(() => {
 //     const handleWheel = () => finish();
 //     const handleTouchMove = () => finish();
@@ -69,11 +173,19 @@
 //     <>
 //       {showOverlay && (
 //         <div className={`introOverlay${isFading ? " fadeOut" : ""}`}>
-//           <img
-//             src="/images/konstralab.gif"
-//             alt="Intro GIF"
-//             className="introGif"
-//           />
+//           {entryPage?.data?.data
+//             ?.filter(item => item.video)                     // Sadece videolu öğeler
+//             .map(item => (
+//               <video
+//                 key={item.id}
+//                 src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
+//                 autoPlay
+//                 muted
+//                 loop
+//                 className="introGif"
+//               />
+//             ))
+//           }
 //           <div className="gifOverlay" />
 //           <div className="overlayText">
 //             <Image
@@ -94,29 +206,26 @@
 
 //       {!showOverlay && (
 //         <main>
-//           {/* Mobil görünüş üçün HeaderHero container xaricində */}
-//           {isMobile && <HeaderHero className="showMobile" />}
-
+//           {isMobile && (
+//             <HeaderHero className="showMobile" contact={contact} entryPage={entryPage} />
+//           )}
 //           <div className="container">
-//             {/* Desktop görünüş üçün HeaderHero container içində */}
-//             {!isMobile && <HeaderHero className="notShowMobile" />}
-
-//             <About />
-//             <MobileHoverCards />
-//             <Cards />
+//             {!isMobile && (
+//               <HeaderHero  className="notShowMobile" contact={contact} entryPage={entryPage} />
+//             )}
+//             <About about={about} />
+//             <MobileHoverCards production={production} />
+//             <Cards production={production} />
 //           </div>
-//           <Brands />
-//           <div className="container">
-//             <Products />
-//           </div>
-//           <Slider />
+//           <Brands products={products} brands={brands} />
+//           <Slider gallery={gallery} />
 //           <div className="contactBackground">
 //             <div className="container">
-//               <Contact />
+//               <Contact contact={contact} />
 //             </div>
 //           </div>
 //           <div className="footerBackground">
-//             <Footer />
+//             <Footer contact={contact} />
 //           </div>
 //         </main>
 //       )}
@@ -132,6 +241,9 @@
 
 
 
+
+
+// ! sonra
 "use client";
 import About from "@/components/About";
 import Brands from "@/components/Brands";
@@ -147,6 +259,16 @@ import React, { useState, useEffect, useCallback } from "react";
 import Cookies from "js-cookie";
 import axiosInstance from "@/lib/axios";
 
+// getTranslations fonksiyonu
+async function getTranslations() {
+  try {
+    const response = await axiosInstance.get("/translation-list");
+    return response;
+  } catch (err) {
+    console.log("Failed to fetch translations", err);
+  }
+}
+
 export default function HomePage() {
   const [showOverlay, setShowOverlay] = useState(true);
   const [isFading, setIsFading] = useState(false);
@@ -158,6 +280,21 @@ export default function HomePage() {
   const [brands, setBrands] = useState(null);
   const [products, setProducts] = useState(null);
   const [production, setProduction] = useState(null);
+
+  // translations state ve t
+  const [translations, setTranslations] = useState(null);
+  const t = translations?.data;
+
+  // translations fetch useEffect
+  useEffect(() => {
+    async function loadTranslations() {
+      const result = await getTranslations();
+      if (result) {
+        setTranslations(result);
+      }
+    }
+    loadTranslations();
+  }, []);
 
   // About verisi
   useEffect(() => {
@@ -223,6 +360,7 @@ export default function HomePage() {
     fetchEntryPageData();
   }, []);
 
+  // Brands verisi
   useEffect(() => {
     async function fetchBrandsData() {
       const lang = Cookies.get("NEXT_LOCALE") || "en";
@@ -238,6 +376,7 @@ export default function HomePage() {
     fetchBrandsData();
   }, []);
 
+  // Products verisi
   useEffect(() => {
     async function fetchProducsData() {
       const lang = Cookies.get("NEXT_LOCALE") || "en";
@@ -253,6 +392,7 @@ export default function HomePage() {
     fetchProducsData();
   }, []);
 
+  // Production verisi
   useEffect(() => {
     async function fetchProductionData() {
       const lang = Cookies.get("NEXT_LOCALE") || "en";
@@ -262,17 +402,11 @@ export default function HomePage() {
         });
         setProduction(data);
       } catch (error) {
-        console.error("Failed to fetch products page data", error);
+        console.error("Failed to fetch production page data", error);
       }
     }
     fetchProductionData();
   }, []);
-
-
-
-
-
-
 
   // Mobil kontrolü
   useEffect(() => {
@@ -307,7 +441,7 @@ export default function HomePage() {
       {showOverlay && (
         <div className={`introOverlay${isFading ? " fadeOut" : ""}`}>
           {entryPage?.data?.data
-            ?.filter(item => item.video)                     // Sadece videolu öğeler
+            ?.filter(item => item.video)
             .map(item => (
               <video
                 key={item.id}
@@ -330,7 +464,7 @@ export default function HomePage() {
           </div>
           <div className="overlayScrool">
             <span>
-              SCROLL
+              {t?.scroll || "Scroll"}
               <img src="/icon/bottomDown.svg" alt="down arrow" />
             </span>
           </div>
@@ -340,25 +474,25 @@ export default function HomePage() {
       {!showOverlay && (
         <main>
           {isMobile && (
-            <HeaderHero className="showMobile" contact={contact} entryPage={entryPage} />
+            <HeaderHero t={t} className="showMobile" contact={contact} entryPage={entryPage} />
           )}
           <div className="container">
             {!isMobile && (
-              <HeaderHero  className="notShowMobile" contact={contact} entryPage={entryPage} />
+              <HeaderHero t={t} className="notShowMobile" contact={contact} entryPage={entryPage} />
             )}
-            <About about={about} />
-            <MobileHoverCards production={production} />
-            <Cards production={production} />
+            <About t={t}  about={about} />
+            <MobileHoverCards t={t}  production={production} />
+            <Cards t={t}  production={production} />
           </div>
-          <Brands products={products} brands={brands} />
-          <Slider gallery={gallery} />
+          <Brands t={t}  products={products} brands={brands} />
+          <Slider t={t}  gallery={gallery} />
           <div className="contactBackground">
             <div className="container">
-              <Contact contact={contact} />
+              <Contact t={t}  contact={contact} />
             </div>
           </div>
           <div className="footerBackground">
-            <Footer contact={contact} />
+            <Footer t={t}  contact={contact} />
           </div>
         </main>
       )}
@@ -366,17 +500,7 @@ export default function HomePage() {
   );
 }
 
-
-
-
-
-
-
-
-
-
-
-
+// ! sonra
 
 
 

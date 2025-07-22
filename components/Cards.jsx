@@ -103,25 +103,12 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import Image from "next/image";
 import React from "react";
 import "../app/[locale]/globals.scss";
 
-export default function CardScatter({ production }) {
+export default function CardScatter({ production, t }) {
   // API'den gelen dizi:
   const productionItems = production.data.data;
 
@@ -132,14 +119,15 @@ export default function CardScatter({ production }) {
     "cardWhite cardCenter",
     "cardDarkLight cardBottomLeft",
     "cardOrangeLight cardBottomRight",
-    "cardDarkLight cardBottomLeft"
+    "cardDarkLight cardBottomLeft",
   ];
 
   return (
     <section id="production">
       <div className="cardContainer">
         <div className="cardsSectionTitle">
-          From Raw Materials to Final <strong>Products</strong>
+          {/* From Raw Materials to Final <strong>Products</strong> */}
+          {t?.productionTitle || "From Raw Materials to Final Products"}
         </div>
 
         {productionItems.map((item, idx) => (
@@ -161,7 +149,6 @@ export default function CardScatter({ production }) {
               <Image
                 // src={item.icon}
                 src={`https://admin-konstralab.onestudio.az/storage${item.icon}`}
-
                 alt={`${item.title} icon`}
                 width={40}
                 height={40}
@@ -172,9 +159,7 @@ export default function CardScatter({ production }) {
               <strong>{item.title}</strong>
 
               {/* İçerik HTML’i */}
-              <div
-                dangerouslySetInnerHTML={{ __html: item.content }}
-              />
+              <div dangerouslySetInnerHTML={{ __html: item.content }} />
             </div>
           </div>
         ))}

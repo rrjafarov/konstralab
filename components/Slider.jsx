@@ -186,14 +186,15 @@ Fancybox.bind("[data-fancybox]", {
   },
 });
 
-const CareersPageSlider = ({ gallery }) => {
+const CareersPageSlider = ({ gallery,t }) => {
   const slidesData = gallery?.data?.data || [];
 
   return (
     <>
       <div className="sliderSectionTitle">
         <span>
-          <strong>Discover</strong> the art of precision in construction
+          {/* <strong>Discover</strong> the art of precision in construction */}
+          {t?.galleryTitle || "Discover the art of precision in construction"}
         </span>
       </div>
       <Swiper

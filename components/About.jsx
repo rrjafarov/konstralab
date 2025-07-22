@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
-const About = ({ about }) => {
+const About = ({ about ,t }) => {
   const imageRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const aboutData = about.data;
@@ -48,7 +48,7 @@ const About = ({ about }) => {
           </div>
           <div className="xl-6 lg-6 md-6 sm-12" id="topRow">
             <div className="aboutSectionContent">
-              <span>about us</span>
+              <span>{t?.about || "about us"}</span>
               <h4>{aboutData.title}</h4>
               <div
                 className="ptag"

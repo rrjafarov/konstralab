@@ -40,7 +40,7 @@
 import React, { useState } from "react";
 import Products from "./Products";
 
-const Brands = ({ brands, products }) => {
+const Brands = ({ brands, products,t }) => {
   const [selectedBrandId, setSelectedBrandId] = useState(null);
   const brandsData = Array.isArray(brands?.data?.data) ? brands.data.data : [];
   const productsData = Array.isArray(products?.data?.data) ? products.data.data : [];
@@ -67,9 +67,10 @@ const Brands = ({ brands, products }) => {
       <div className="brandsSection">
         <div className="container">
           <div className="brandTitle">
-            <span>brands</span>
+            <span>{t?.brands || 'Brands'}</span>
             <h6 className="brandDescription">
-              Products Built for Strength, Designed for Excellence
+              {/* Products Built for Strength, Designed for Excellence */}
+              {t?.brandsTitle || "Products Built for Strength, Designed for Excellence "}
             </h6>
             <div className="productsCatButtons">
               {/* "All" button with active state */}
@@ -78,7 +79,7 @@ const Brands = ({ brands, products }) => {
                   className={selectedBrandId === null ? 'active' : ''}
                   onClick={handleAllClick}
                 >
-                  All
+                  {t?.all || "ALL"}
                 </button>
               </div>
               

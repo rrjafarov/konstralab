@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Contact = ({ contact }) => {
+const Contact = ({ contact ,t }) => {
   const contactData = contact.data;
   return (
     <div>
@@ -9,7 +9,7 @@ const Contact = ({ contact }) => {
         <div className="row">
           <div className="xl-5 lg-5 md-8 sm-12">
             <div className="contactContent">
-              <strong>Talk to us</strong>
+              <strong>{t?.talkToUs || "talk to us"}</strong>
               <span>{contactData.footer_text_title}</span>
               <div
                 className="contact-ptag"
@@ -19,7 +19,7 @@ const Contact = ({ contact }) => {
               ></div>
 
               <div className="contactLinks">
-                <strong>Contact us</strong>
+                <strong>{t?.contact || "Contact"}</strong>
                 <div className="contactLink">
                   <Link href={`tel:+${contactData.phone}`}>
                     <div className="iconDiv">

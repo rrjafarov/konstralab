@@ -3,11 +3,11 @@ import MobileMenuCloseIcon from "@/public/icon/mobileMenuClose.svg";
 import Link from "next/link";
 import Phone from "@/public/icon/phoneHeader.svg";
 
-const MobileMenu = ({ contactData, onClose }) => {
+const MobileMenu = ({ contactData, onClose,t }) => {
   return (
     <div id="mobileMenu">
       <div className="mobileMenuHeader">
-        <span>Menu</span>
+        <span>{t?.menu || "Menu"}</span>
         <div
           className="closeMobileMenu"
           onClick={onClose}
@@ -20,27 +20,27 @@ const MobileMenu = ({ contactData, onClose }) => {
         <ul>
           <li>
             <Link href="#about">
-              <span>About Fabric</span>
+              <span>{t?.aboutFabric || "About Fabric"}</span>
             </Link>
           </li>
           <li>
             <Link href="#production">
-              <span>About Fabric</span>
+              <span>{t?.production || "Production"}</span>
             </Link>
           </li>
           <li>
             <Link href="#products">
-              <span>Products</span>
+              <span>{t?.products || "Products"}</span>
             </Link>
           </li>
           <li>
             <Link href="#gallery">
-              <span>Gallery</span>
+              <span>{t?.gallery || "Gallery"}</span>
             </Link>
           </li>
           <li>
             <Link href="#contact">
-              <span>Contact us</span>
+              <span>{t?.contact || "Contact"}</span>
             </Link>
           </li>
         </ul>
@@ -48,7 +48,7 @@ const MobileMenu = ({ contactData, onClose }) => {
       <div className="mobileMenuLine"></div>
 
       <div className="mobileMenuContact">
-        <span>Contact us</span>
+        <span>{t?.contact || "Contact"}</span>
         <div className="mobileContactLinks">
           <div className="mobileContactLink">
             <Link href={`tel:+${contactData.phone}`}>
@@ -85,7 +85,7 @@ const MobileMenu = ({ contactData, onClose }) => {
           <div className="callHeader">
             <div className="callHeaderItem">
               <Phone />
-              <span>Get in Touch</span>
+              <span>{t?.getInTouch || "Get in touch"}</span>
             </div>
           </div>
         </div>
