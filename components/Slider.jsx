@@ -193,7 +193,6 @@ const CareersPageSlider = ({ gallery,t }) => {
     <>
       <div className="sliderSectionTitle">
         <span>
-          {/* <strong>Discover</strong> the art of precision in construction */}
           {t?.galleryTitle || "Discover the art of precision in construction"}
         </span>
       </div>
