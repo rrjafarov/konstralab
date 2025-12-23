@@ -14,7 +14,7 @@
     "@splidejs/splide": "^4.1.4",
     "axios": "^1.10.0",
     "js-cookie": "^3.0.5",
-    "next": "15.3.4",
+    "next": "^15.5.9",
     "next-intl": "^4.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
