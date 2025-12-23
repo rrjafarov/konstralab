@@ -1,6 +1,6 @@
 // "use client";
 // import Image from "next/image";
-// import React, { useState, useRef, useEffect } from "react";
+// import React from "react";
 // import Link from "next/link";
 // import { Fancybox } from "@fancyapps/ui";
 // import "@fancyapps/ui/dist/fancybox/fancybox.css";
@@ -18,12 +18,14 @@
 //   },
 // });
 
-// const CareersPageSlider = ({gallery}) => {
+// const CareersPageSlider = ({ gallery,t }) => {
+//   const slidesData = gallery?.data?.data || [];
+
 //   return (
 //     <>
 //       <div className="sliderSectionTitle">
 //         <span>
-//           <strong>Discover</strong> the art of precision in construction
+//           {t?.galleryTitle || "Discover the art of precision in construction"}
 //         </span>
 //       </div>
 //       <Swiper
@@ -47,96 +49,25 @@
 //         }}
 //         className="mySwiper careersSwiper"
 //       >
-//         <SwiperSlide>
-//           <Link
-//             href="/images/slide1.png"
-//             className="careersSliderGalleryImg"
-//             data-fancybox="videos"
-//           >
-//             <Image
-//               src="/images/slide1.png"
-//               className="careersSliderCardImg"
-//               alt="slide"
-//               width={400}
-//               height={400}
-//             />
-//           </Link>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Link
-//             href="/images/slide1.png"
-//             className="careersSliderGalleryImg"
-//             data-fancybox="videos"
-//           >
-//             <Image
-//               src="/images/slide1.png"
-//               className="careersSliderCardImg"
-//               alt="slide"
-//               width={400}
-//               height={400}
-//             />
-//           </Link>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Link
-//             href="/images/slide1.png"
-//             className="careersSliderGalleryImg"
-//             data-fancybox="videos"
-//           >
-//             <Image
-//               src="/images/slide1.png"
-//               className="careersSliderCardImg"
-//               alt="slide"
-//               width={400}
-//               height={400}
-//             />
-//           </Link>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Link
-//             href="/images/slide1.png"
-//             className="careersSliderGalleryImg"
-//             data-fancybox="videos"
-//           >
-//             <Image
-//               src="/images/slide1.png"
-//               className="careersSliderCardImg"
-//               alt="slide"
-//               width={400}
-//               height={400}
-//             />
-//           </Link>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Link
-//             href="/images/slide1.png"
-//             className="careersSliderGalleryImg"
-//             data-fancybox="videos"
-//           >
-//             <Image
-//               src="/images/slide1.png"
-//               className="careersSliderCardImg"
-//               alt="slide"
-//               width={400}
-//               height={400}
-//             />
-//           </Link>
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Link
-//             href="/images/slide1.png"
-//             className="careersSliderGalleryImg"
-//             data-fancybox="videos"
-//           >
-//             <Image
-//               src="/images/slide1.png"
-//               className="careersSliderCardImg"
-//               alt="slide"
-//               width={400}
-//               height={400}
-//             />
-//           </Link>
-//         </SwiperSlide>
+//         {slidesData.map((item) =>
+//           item.gallery.map((imgUrl, idx) => (
+//             <SwiperSlide key={`${item.id}-${idx}`}>
+//               <Link
+//                 href={`https://admin-konstralab.onestudio.az/storage${imgUrl}`}
+//                 className="careersSliderGalleryImg"
+//                 data-fancybox="videos"
+//               >
+//                 <Image
+//                   src={`https://admin-konstralab.onestudio.az/storage${imgUrl}`}
+//                   className="careersSliderCardImg"
+//                   alt={`slide-${item.id}-${idx}`}
+//                   width={400}
+//                   height={400}
+//                 />
+//               </Link>
+//             </SwiperSlide>
+//           ))
+//         )}
 //       </Swiper>
 
 //       <div className="careersCustom-navigation">
@@ -161,11 +92,27 @@
 
 
 
-// ! last version
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// careers/CareersPageSlider.jsx
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -186,7 +133,7 @@ Fancybox.bind("[data-fancybox]", {
   },
 });
 
-const CareersPageSlider = ({ gallery,t }) => {
+const CareersPageSlider = ({ gallery, t }) => {
   const slidesData = gallery?.data?.data || [];
 
   return (
@@ -198,7 +145,7 @@ const CareersPageSlider = ({ gallery,t }) => {
       </div>
       <Swiper
         slidesPerView={5}
-        spaceBetween={-5}
+        spaceBetween={-5} // istersen overlap görseli korumak için negatif bırak
         speed={2000}
         loop={true}
         centeredSlides={true}
