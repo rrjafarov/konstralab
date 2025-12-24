@@ -108,11 +108,6 @@
 
 
 
-
-
-
-
-// careers/CareersPageSlider.jsx
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -133,7 +128,7 @@ Fancybox.bind("[data-fancybox]", {
   },
 });
 
-const CareersPageSlider = ({ gallery, t }) => {
+const CareersPageSlider = ({ gallery,t }) => {
   const slidesData = gallery?.data?.data || [];
 
   return (
@@ -145,7 +140,7 @@ const CareersPageSlider = ({ gallery, t }) => {
       </div>
       <Swiper
         slidesPerView={5}
-        spaceBetween={-5} // istersen overlap görseli korumak için negatif bırak
+        spaceBetween={-5}
         speed={2000}
         loop={true}
         centeredSlides={true}
@@ -163,10 +158,11 @@ const CareersPageSlider = ({ gallery, t }) => {
           1280: { slidesPerView: 5 },
         }}
         className="mySwiper careersSwiper"
+        style={{ overflow: 'visible' }}
       >
         {slidesData.map((item) =>
           item.gallery.map((imgUrl, idx) => (
-            <SwiperSlide key={`${item.id}-${idx}`}>
+            <SwiperSlide key={`${item.id}-${idx}`} style={{ padding: '0 15px' }}>
               <Link
                 href={`https://admin-konstralab.onestudio.az/storage${imgUrl}`}
                 className="careersSliderGalleryImg"
