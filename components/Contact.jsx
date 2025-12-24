@@ -10,7 +10,7 @@ const Contact = ({ contact ,t }) => {
           <div className="xl-5 lg-5 md-8 sm-12">
             <div className="contactContent">
               <strong>{t?.talkToUs || "talk to us"}</strong>
-              <span>{contactData.footer_text_title}</span>
+              <h3>{contactData.footer_text_title}</h3>
               <div
                 className="contact-ptag"
                 dangerouslySetInnerHTML={{

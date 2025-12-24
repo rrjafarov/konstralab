@@ -1,42 +1,3 @@
-// import React from "react";
-// import Products from "./Products";
-
-// const Brands = ({brands}) => {
-//   const brandsData = brands.data.data
-//   return (
-//     <>
-//       <div className="brandsSection">
-//         <div className="container">
-//           <div className="brandTitle">
-//             <span>brands</span>
-//             <h6 className="brandDescription">
-//               Products Built for Strength, Designed for Excellence
-//             </h6>
-//             <div className="productsCatButtons">
-//               <div className="allbutton">
-//                 <button>All</button>
-//               </div>
-//               <div className="otherBtn">
-//                 <button>Gipstar</button>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="container">
-//         <Products />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Brands;
-
-
-
-
-
-
 import React, { useState } from "react";
 import Products from "./Products";
 
@@ -68,10 +29,10 @@ const Brands = ({ brands, products,t }) => {
         <div className="container">
           <div className="brandTitle">
             <span>{t?.brands || 'Brands'}</span>
-            <h6 className="brandDescription">
+            <h2 className="brandDescription">
               {/* Products Built for Strength, Designed for Excellence */}
               {t?.brandsTitle || "Products Built for Strength, Designed for Excellence "}
-            </h6>
+            </h2>
             <div className="productsCatButtons">
               {/* "All" button with active state */}
               <div className="allbutton">
@@ -114,46 +75,3 @@ export default Brands;
 
 
 
-
-
-
-// ! tam islek kod
-// import React from "react";
-// import Products from "./Products";
-
-// const Brands = ({ brands , products }) => {
-//   const brandsData = Array.isArray(brands?.data?.data) ? brands.data.data : [];
-
-//   return (
-//     <>
-//       <div className="brandsSection">
-//         <div className="container">
-//           <div className="brandTitle">
-//             <span>brands</span>
-//             <h6 className="brandDescription">
-//               Products Built for Strength, Designed for Excellence
-//             </h6>
-//             <div className="productsCatButtons">
-//               {/* “All” butonu olduğu gibi korunuyor */}
-//               <div className="allbutton">
-//                 <button>All</button>
-//               </div>
-              
-//               {/* otherBtn içinde brandsData.map ile tüm markaları listele */}
-//               {brandsData.map((brand) => (
-//                 <div className="otherBtn" key={brand.id}>
-//                   <button>{brand.title}</button>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//       <div className="container">
-//         <Products products={products} />
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Brands;

@@ -134,9 +134,9 @@ const CareersPageSlider = ({ gallery,t }) => {
   return (
     <>
       <div className="sliderSectionTitle">
-        <span>
+        <h2>
           {t?.galleryTitle || "Discover the art of precision in construction"}
-        </span>
+        </h2>
       </div>
       <Swiper
         slidesPerView={5}

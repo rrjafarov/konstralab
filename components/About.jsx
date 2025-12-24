@@ -49,7 +49,7 @@ const About = ({ about ,t }) => {
           <div className="xl-6 lg-6 md-6 sm-12" id="topRow">
             <div className="aboutSectionContent">
               <span>{t?.about || "about us"}</span>
-              <h4>{aboutData.title}</h4>
+              <h2>{aboutData.title}</h2>
               <div
                 className="ptag"
                 dangerouslySetInnerHTML={{

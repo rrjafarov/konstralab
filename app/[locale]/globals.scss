@@ -1,54 +1,50 @@
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../../public/fonts/Gilroy-Bold.woff') format('woff');
+  font-family: "Gilroy";
+  src: url("../../public/fonts/Gilroy-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../../public/fonts/Gilroy-Medium.woff') format('woff');
+  font-family: "Gilroy";
+  src: url("../../public/fonts/Gilroy-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../../public/fonts/Gilroy-Regular.woff') format('woff');
+  font-family: "Gilroy";
+  src: url("../../public/fonts/Gilroy-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../../public/fonts/Gilroy-Thin.woff') format('woff');
+  font-family: "Gilroy";
+  src: url("../../public/fonts/Gilroy-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../../public/fonts/Gilroy-Black.woff') format('woff');
+  font-family: "Gilroy";
+  src: url("../../public/fonts/Gilroy-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../../public/fonts/Gilroy-Semibold.woff') format('woff');
+  font-family: "Gilroy";
+  src: url("../../public/fonts/Gilroy-Semibold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
-
-
-
-
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -72,8 +68,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   // font-family: "Mulish", sans-serif !important;
-  font-family: 'Gilroy' !important;
-
+  font-family: "Gilroy" !important;
 }
 
 html {
@@ -425,10 +420,7 @@ ul {
   margin: 0;
 }
 
-
 // ! ----------------------------------------------------------------------------------------------------------------------------------
-
-
 
 // .introOverlay {
 //   position: fixed;
@@ -548,7 +540,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(50, 57, 68, 0) 0%, #000A1C 100%);
+    background: linear-gradient(180deg, rgba(50, 57, 68, 0) 0%, #000a1c 100%);
     mix-blend-mode: multiply;
     pointer-events: none;
   }
@@ -592,8 +584,8 @@ ul {
 
     span {
       border-radius: 1.8rem;
-      border: 1px solid #D9D9D9;
-      color: #FFF;
+      border: 1px solid #d9d9d9;
+      color: #fff;
       font-size: 1.4rem;
       font-weight: 500;
       line-height: normal;
@@ -611,22 +603,6 @@ ul {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #header {
   margin: 2.7rem 0;
 }
@@ -639,7 +615,7 @@ ul {
   border-radius: 5rem;
   position: relative;
   // opacity: 0.78;
-  background: linear-gradient(180deg, rgba(50, 57, 68, 0.00) 0%, #000A1C 100%);
+  background: linear-gradient(180deg, rgba(50, 57, 68, 0) 0%, #000a1c 100%);
   mix-blend-mode: multiply;
 
   .heroGif {
@@ -674,7 +650,7 @@ ul {
 
     .navMenu {
       border-radius: 10rem;
-      background: #FFF;
+      background: #fff;
 
       ul {
         padding: 1.8rem 2.6rem;
@@ -684,7 +660,7 @@ ul {
         li {
           a {
             position: relative;
-            color: #08316F;
+            color: #08316f;
             font-size: 1.5rem;
             font-style: normal;
             font-weight: 600;
@@ -699,7 +675,7 @@ ul {
               left: 50%;
               width: 0;
               height: 2px;
-              background-color: #08316F;
+              background-color: #08316f;
               transition: width 0.4s ease, left 0.4s ease;
             }
 
@@ -720,7 +696,7 @@ ul {
     .callHeader {
       cursor: pointer;
       border-radius: 10rem;
-      background: #FF5F14;
+      background: #ff5f14;
 
       .callHeaderItem {
         padding: 1.2rem 2.2rem;
@@ -730,7 +706,7 @@ ul {
         align-items: center;
 
         span {
-          color: #FFF;
+          color: #fff;
           font-size: 1.7rem;
           font-style: normal;
           font-weight: 600;
@@ -750,7 +726,7 @@ ul {
     .callHeaderNav {
       cursor: pointer;
       border-radius: 10rem;
-      background: #FF5F14;
+      background: #ff5f14;
 
       .callHeaderItem {
         padding: 1.2rem 2.2rem;
@@ -760,7 +736,7 @@ ul {
         align-items: center;
 
         span {
-          color: #FFF;
+          color: #fff;
           font-size: 1.7rem;
           font-style: normal;
           font-weight: 600;
@@ -781,7 +757,7 @@ ul {
       width: 5.9rem;
       height: 5.9rem;
       flex-shrink: 0;
-      background: #FF5F14;
+      background: #ff5f14;
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -798,8 +774,6 @@ ul {
     z-index: 1;
     color: #fff;
 
-
-
     // 1. Animasyon tanımı: soldan gelme
     @keyframes slideInFromLeft {
       from {
@@ -815,7 +789,7 @@ ul {
 
     .heroBottomSubTitle {
       span {
-        color: #FF8B54;
+        color: #ff8b54;
         font-size: 1.7rem;
         font-style: normal;
         font-weight: 500;
@@ -833,14 +807,14 @@ ul {
       }
 
       strong {
-        color: #FFF;
+        color: #fff;
         text-align: center;
         font-size: 1.7rem;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
         letter-spacing: 0.064rem;
-        border-bottom: 2px solid #FFF;
+        border-bottom: 2px solid #fff;
       }
     }
 
@@ -849,7 +823,7 @@ ul {
       padding-top: 2rem;
 
       strong {
-        color: #FF5F14;
+        color: #ff5f14;
         font-size: 4.6rem;
         font-style: normal;
         font-weight: 600;
@@ -857,8 +831,8 @@ ul {
         letter-spacing: -0.092rem;
       }
 
-      span {
-        color: #FFF;
+      h1 {
+        color: #fff;
         font-size: 4.6rem;
         font-style: normal;
         font-weight: 500;
@@ -891,7 +865,7 @@ ul {
     position: relative;
 
     span {
-      color: #FF7D40;
+      color: #ff7d40;
       font-size: 2.8rem;
       font-style: normal;
       font-weight: 600;
@@ -906,7 +880,7 @@ ul {
       width: 7rem;
       height: 7rem;
       flex-shrink: 0;
-      background: #FFF;
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -926,7 +900,7 @@ ul {
 
       li {
         a {
-          color: #FFF;
+          color: #fff;
           font-size: 2.2rem;
           font-style: normal;
           font-weight: 600;
@@ -941,14 +915,14 @@ ul {
     margin: 6.17rem 2rem 4rem 2rem;
     opacity: 0.1;
     height: 0.1rem;
-    background: #FFF;
+    background: #fff;
   }
 
   .mobileMenuContact {
     padding: 0rem 2rem;
 
     span {
-      color: #FF5F14;
+      color: #ff5f14;
       font-size: 2rem;
       font-style: normal;
       font-weight: 700;
@@ -984,7 +958,7 @@ ul {
         justify-content: center;
         align-items: center;
         border-radius: 3.4rem;
-        border: 1px solid #CCC;
+        border: 1px solid #ccc;
         width: 4.4rem;
         height: 4.4rem;
         flex-shrink: 0;
@@ -998,7 +972,7 @@ ul {
       }
 
       span {
-        color: #FFF;
+        color: #fff;
         font-size: 1.6rem;
         font-style: normal;
         font-weight: 500;
@@ -1099,7 +1073,7 @@ ul {
         font-size: 3.6rem !important;
       }
 
-      span {
+      h1 {
         font-size: 3.6rem !important;
       }
     }
@@ -1110,7 +1084,7 @@ ul {
     width: 5.9rem;
     height: 5.9rem;
     flex-shrink: 0;
-    background: #FF5F14;
+    background: #ff5f14;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -1121,7 +1095,6 @@ ul {
   }
 }
 
-
 @media only screen and (max-width: 767.9px) {
   .showMobile {
     display: block !important;
@@ -1131,12 +1104,6 @@ ul {
     display: none !important;
   }
 }
-
-
-
-
-
-
 
 .aboutSection {
   margin-top: 6.8rem;
@@ -1169,7 +1136,7 @@ ul {
     gap: 2rem;
 
     span {
-      color: #FF5F14;
+      color: #ff5f14;
       font-size: 2rem;
       font-style: normal;
       font-weight: 700;
@@ -1178,15 +1145,15 @@ ul {
     }
 
     .ptag {
-      color: #08316F;
+      color: #08316f;
       font-size: 1.6rem;
       font-style: normal;
       font-weight: 500;
       line-height: 161.5%;
     }
 
-    h4 {
-      color: #08316F;
+    h2 {
+      color: #08316f;
       font-size: 4.6rem;
       font-style: normal;
       font-weight: 600;
@@ -1224,11 +1191,12 @@ ul {
 
 .brandsSection {
   margin: 6.1rem 0 4rem 0;
-  background-image:
-    linear-gradient(to bottom,
+  background-image: linear-gradient(
+      to bottom,
       rgba(11, 30, 60, 0.85),
       rgba(11, 30, 60, 0.7),
-      rgba(11, 30, 60, 0.9)),
+      rgba(11, 30, 60, 0.9)
+    ),
     url("../../public/images/brandsBackImage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -1240,7 +1208,6 @@ ul {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
 }
 
 .brandTitle {
@@ -1252,7 +1219,7 @@ ul {
   gap: 2rem;
 
   span {
-    color: #FF5F14;
+    color: #ff5f14;
     font-size: 2rem;
     font-style: normal;
     font-weight: 700;
@@ -1262,7 +1229,7 @@ ul {
   }
 
   .brandDescription {
-    color: #FFF;
+    color: #fff;
     font-size: 4.6rem;
     font-style: normal;
     font-weight: 600;
@@ -1278,7 +1245,7 @@ ul {
     .allbutton {
       button {
         border-radius: 1rem;
-        background: #FFF;
+        background: #fff;
         color: #131718;
         text-align: center;
         font-size: 1.6rem;
@@ -1295,7 +1262,7 @@ ul {
       button {
         padding: 1.7rem 3.2rem;
         background-color: transparent;
-        color: #FFF;
+        color: #fff;
         text-align: center;
         font-size: 1.6rem;
         font-style: normal;
@@ -1304,18 +1271,16 @@ ul {
         letter-spacing: 0.032rem;
         text-transform: uppercase;
         border-radius: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.70);
+        border: 1px solid rgba(255, 255, 255, 0.7);
       }
     }
   }
 }
 
-
 @media only screen and (max-width: 767.9px) {
   .brandTitle {
-
     span {
-      color: #FF5F14;
+      color: #ff5f14;
       font-size: 2rem;
       font-style: normal;
       font-weight: 700;
@@ -1325,7 +1290,7 @@ ul {
     }
 
     .brandDescription {
-      color: #FFF;
+      color: #fff;
       font-size: 3.2rem !important;
       font-style: normal;
       font-weight: 600;
@@ -1341,7 +1306,7 @@ ul {
       .allbutton {
         button {
           border-radius: 1rem;
-          background: #FFF;
+          background: #fff;
           color: #131718;
           text-align: center;
           font-size: 1.6rem;
@@ -1358,7 +1323,7 @@ ul {
         button {
           padding: 1.7rem 3.2rem;
           background-color: transparent;
-          color: #FFF;
+          color: #fff;
           text-align: center;
           font-size: 1.6rem;
           font-style: normal;
@@ -1367,17 +1332,12 @@ ul {
           letter-spacing: 0.032rem;
           text-transform: uppercase;
           border-radius: 1rem;
-          border: 1px solid rgba(255, 255, 255, 0.70);
+          border: 1px solid rgba(255, 255, 255, 0.7);
         }
       }
     }
   }
 }
-
-
-
-
-
 
 .productsCards {
   padding: 2rem 0 4rem 0;
@@ -1388,7 +1348,7 @@ ul {
     flex-shrink: 0;
     border-radius: 2.2386rem;
     border: 0.746px solid rgba(8, 49, 111, 0.28);
-    background: #FFFFFE;
+    background: #fffffe;
 
     .productsCardImage {
       display: flex;
@@ -1396,7 +1356,7 @@ ul {
       align-items: center;
       width: 100%;
       height: 26rem;
-      border-bottom: 1px solid #CDD5E1;
+      border-bottom: 1px solid #cdd5e1;
       padding: 2rem;
 
       img {
@@ -1416,7 +1376,7 @@ ul {
       gap: 2rem;
 
       h1 {
-        color: #08316F;
+        color: #08316f;
         text-align: center;
         font-size: 1.9rem;
         font-style: normal;
@@ -1454,7 +1414,7 @@ ul {
   flex-shrink: 0;
   border-radius: 2.2386rem;
   border: 0.746px solid rgba(8, 49, 111, 0.28);
-  background: #FFFFFE;
+  background: #fffffe;
 
   .productsSliderCardImage {
     display: flex;
@@ -1462,7 +1422,7 @@ ul {
     align-items: center;
     width: 100%;
     height: 26rem;
-    border-bottom: 1px solid #CDD5E1;
+    border-bottom: 1px solid #cdd5e1;
     padding: 2rem;
 
     img {
@@ -1482,7 +1442,7 @@ ul {
     gap: 2rem;
 
     h1 {
-      color: #08316F;
+      color: #08316f;
       text-align: center;
       font-size: 1.9rem;
       font-style: normal;
@@ -1512,7 +1472,6 @@ ul {
     }
   }
 }
-
 
 @media only screen and (max-width: 767.9px) {
   .productsCards {
@@ -1661,24 +1620,6 @@ ul {
 // }
 // !slider
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // !slider
 .sliderSectionTitle {
   padding: 10rem 1rem 6rem;
@@ -1687,7 +1628,7 @@ ul {
   align-items: center;
   text-align: center;
 
-  span {
+  h2 {
     color: #131718;
     font-size: 4.6rem;
     font-style: normal;
@@ -1696,11 +1637,10 @@ ul {
     letter-spacing: -0.046rem;
     max-width: 61.6rem;
     text-align: center;
-
   }
 
   strong {
-    color: #FF5F14;
+    color: #ff5f14;
     text-align: center;
     font-size: 4.6rem;
     font-style: normal;
@@ -1727,13 +1667,12 @@ ul {
     justify-content: center;
     align-items: center;
     border-radius: 1.6rem;
-    border: 1px solid #94A0B2;
+    border: 1px solid #94a0b2;
     background: transparent;
 
     img {
       width: 2.6rem;
       height: 2.6rem;
-
     }
   }
 }
@@ -1768,8 +1707,6 @@ ul {
   }
 }
 
-
-
 .careersSliderGalleryImg {
   width: 100% !important;
   height: 47.9154rem !important;
@@ -1784,7 +1721,6 @@ ul {
   object-fit: cover;
   border-radius: 2rem !important;
   background-color: transparent !important;
-
 }
 
 .careersSwiper {
@@ -1804,7 +1740,6 @@ ul {
   height: 100%;
   border-radius: 2rem;
   background-color: transparent !important;
-
 }
 
 .careersSwiper .swiper-slide-next,
@@ -1837,29 +1772,6 @@ ul {
   overflow: visible !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contactBackground {
   margin-top: 10rem;
   background-image: url("../../public//images/contactBackgrounds.jpg");
@@ -1879,7 +1791,7 @@ ul {
     gap: 1.3rem;
 
     strong {
-      color: #FF5F14;
+      color: #ff5f14;
       font-size: 2rem;
       font-style: normal;
       font-weight: 700;
@@ -1887,7 +1799,7 @@ ul {
       letter-spacing: 0.04rem;
     }
 
-    span {
+    h3 {
       color: #131718;
       font-size: 4rem;
       font-style: normal;
@@ -1937,7 +1849,7 @@ ul {
           justify-content: center;
           align-items: center;
           border-radius: 3.4rem;
-          border: 1px solid #CCC;
+          border: 1px solid #ccc;
           width: 4.4rem;
           height: 4.4rem;
           flex-shrink: 0;
@@ -1964,7 +1876,6 @@ ul {
 }
 
 @media only screen and (max-width: 767.9px) {
-
   .contactBackground {
     margin-top: 4.56rem !important;
   }
@@ -2000,8 +1911,6 @@ ul {
     }
   }
 }
-
-
 
 //! Footer
 .footerBackground {
@@ -2040,7 +1949,7 @@ ul {
     li {
       a {
         position: relative;
-        color: #FFF;
+        color: #fff;
         font-size: 1.5rem;
         font-style: normal;
         font-weight: 600;
@@ -2055,7 +1964,7 @@ ul {
           left: 50%;
           width: 0;
           height: 2px;
-          background-color: #FFF;
+          background-color: #fff;
           transition: width 0.4s ease, left 0.4s ease;
         }
 
@@ -2063,7 +1972,6 @@ ul {
           width: 100%;
           left: 0;
         }
-
       }
     }
   }
@@ -2077,7 +1985,7 @@ ul {
 .callHeader {
   cursor: pointer;
   border-radius: 10rem;
-  background: #FF5F14;
+  background: #ff5f14;
 
   .callHeaderItem {
     padding: 1.2rem 2.2rem;
@@ -2087,7 +1995,7 @@ ul {
     align-items: center;
 
     span {
-      color: #FFF;
+      color: #fff;
       font-size: 1.8rem;
       font-style: normal;
       font-weight: 600;
@@ -2106,7 +2014,7 @@ ul {
 
 .footerLine {
   opacity: 0.2;
-  background: #788BA9;
+  background: #788ba9;
   width: 100%;
   height: 0.1rem;
 }
@@ -2119,7 +2027,7 @@ ul {
 
   .footerBottomLeft {
     strong {
-      color: #929BA9;
+      color: #929ba9;
       font-size: 1.4rem;
       font-style: normal;
       font-weight: 600;
@@ -2128,7 +2036,7 @@ ul {
     }
 
     span {
-      color: #929BA9;
+      color: #929ba9;
       font-size: 1.4rem;
       font-style: normal;
       font-weight: 300;
@@ -2151,7 +2059,7 @@ ul {
     }
 
     h2 {
-      color: #CBD1D8;
+      color: #cbd1d8;
       font-size: 1.4rem;
       font-style: normal;
       font-weight: 600;
@@ -2160,7 +2068,7 @@ ul {
     }
 
     span {
-      color: #CBD1D8;
+      color: #cbd1d8;
       font-size: 1.4rem;
       font-style: normal;
       font-weight: 400;
@@ -2239,12 +2147,12 @@ ul {
 
     .footerBottomLeft {
       strong {
-        color: #FFF !important;
+        color: #fff !important;
         font-size: 1.6rem !important;
       }
 
       span {
-        color: #FFF !important;
+        color: #fff !important;
         font-size: 1.6rem !important;
       }
     }
@@ -2306,125 +2214,6 @@ ul {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ! Cards
 #production {
   background-image: (url("../../public/images/cardsBackBuilder.png"));
@@ -2438,7 +2227,6 @@ ul {
   width: 100%;
   margin-top: 7.5rem;
   height: 86.6rem;
-
 }
 
 /* ortak card stili */
@@ -2480,11 +2268,10 @@ ul {
   }
 }
 
-
 /* renk varyasyonları */
 .cardOrange {
-  background: #FF5F14;
-  color: #FFF;
+  background: #ff5f14;
+  color: #fff;
   text-align: center;
   font-size: 2.8rem;
   font-style: normal;
@@ -2494,8 +2281,8 @@ ul {
 }
 
 .cardOrangeLight {
-  background: #FB834B;
-  color: #FFF;
+  background: #fb834b;
+  color: #fff;
   text-align: center;
   font-size: 2.8rem;
   font-style: normal;
@@ -2505,8 +2292,8 @@ ul {
 }
 
 .cardDark {
-  background: #231F20;
-  color: #FFF;
+  background: #231f20;
+  color: #fff;
   text-align: center;
   font-size: 2.8rem;
   font-style: normal;
@@ -2517,7 +2304,7 @@ ul {
 
 .cardDarkLight {
   background: #545454;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-size: 2.8rem;
   font-style: normal;
@@ -2527,16 +2314,15 @@ ul {
 }
 
 .cardWhite {
-  background: #FFFCFA;
-  color: #2D2D2D;
+  background: #fffcfa;
+  color: #2d2d2d;
   text-align: center;
   font-size: 2.8rem;
   font-style: normal;
   font-weight: 600;
   line-height: 3rem;
   letter-spacing: -0.056rem;
-  border: 1px solid rgba(0, 0, 0, 0.20);
-
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* pozisyonlandırma */
@@ -2576,7 +2362,7 @@ ul {
   padding-left: 6.2rem;
 
   strong {
-    color: #FF5F14;
+    color: #ff5f14;
     font-size: 4.6rem;
     font-style: normal;
     font-weight: 600;
@@ -2604,8 +2390,8 @@ ul {
     z-index: 999;
     width: 50rem;
     height: 32rem;
-    border: 1px solid rgba(8, 49, 111, 0.40) !important;
-    background: #FFFCFA !important;
+    border: 1px solid rgba(8, 49, 111, 0.4) !important;
+    background: #fffcfa !important;
     color: #323232;
     display: flex;
     flex-direction: column;
@@ -2689,6 +2475,14 @@ ul {
 
 @media only screen and (max-width: 767.9px) {
   .cardsSectionTitleHoverMobile {
+    h2 {
+      color: #131718;
+      font-size: 3.6rem !important;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 5rem;
+      letter-spacing: -0.092rem;
+    }
     color: #131718;
     font-size: 3.6rem !important;
     font-style: normal;
@@ -2699,7 +2493,7 @@ ul {
     padding: 6rem 2rem;
 
     strong {
-      color: #FF5F14;
+      color: #ff5f14;
       font-size: 3.6rem !important;
       font-style: normal;
       font-weight: 600;
@@ -2752,8 +2546,8 @@ ul {
     }
 
     .cardOrangeHoverMobile {
-      background: #FF5F14;
-      color: #FFF;
+      background: #ff5f14;
+      color: #fff;
       text-align: center;
       font-size: 2.8rem;
       font-style: normal;
@@ -2763,8 +2557,8 @@ ul {
     }
 
     .cardOrangeHoverMobile {
-      background: #FF5F14;
-      color: #FFF;
+      background: #ff5f14;
+      color: #fff;
       text-align: center;
       font-size: 2.8rem;
       font-style: normal;
@@ -2774,8 +2568,8 @@ ul {
     }
 
     .cardOrangeLightHoverMobile {
-      background: #FB834B;
-      color: #FFF;
+      background: #fb834b;
+      color: #fff;
       text-align: center;
       font-size: 2.8rem;
       font-style: normal;
@@ -2785,8 +2579,8 @@ ul {
     }
 
     .cardDarkHoverMobile {
-      background: #231F20;
-      color: #FFF;
+      background: #231f20;
+      color: #fff;
       text-align: center;
       font-size: 2.8rem;
       font-style: normal;
@@ -2797,7 +2591,7 @@ ul {
 
     .cardDarkLightHoverMobile {
       background: #545454;
-      color: #FFF;
+      color: #fff;
       text-align: center;
       font-size: 2.8rem;
       font-style: normal;
@@ -2807,16 +2601,15 @@ ul {
     }
 
     .cardWhiteHoverMobile {
-      background: #FFFCFA;
-      color: #2D2D2D;
+      background: #fffcfa;
+      color: #2d2d2d;
       text-align: center;
       font-size: 2.8rem;
       font-style: normal;
       font-weight: 600;
       line-height: 3rem;
       letter-spacing: -0.056rem;
-      border: 1px solid rgba(0, 0, 0, 0.20);
-
+      border: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     .cardHoverMobile {
@@ -2834,17 +2627,14 @@ ul {
       }
 
       &:hover {
-
-
-
         position: relative;
         z-index: 999;
         width: 38.2rem;
         height: 33.9rem;
         margin-left: -3.35rem;
         margin-top: -2.6rem;
-        border: 1px solid rgba(8, 49, 111, 0.40) !important;
-        background: #FFFCFA !important;
+        border: 1px solid rgba(8, 49, 111, 0.4) !important;
+        background: #fffcfa !important;
         color: #323232;
         display: flex;
         flex-direction: column;
@@ -2901,5 +2691,4 @@ ul {
       }
     }
   }
-
 }
