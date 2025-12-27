@@ -142,7 +142,7 @@ const CareersPageSlider = ({ gallery, t }) => {
       </div>
       <Swiper
         slidesPerView={5}
-        spaceBetween={-5}
+        spaceBetween={20}
         speed={2000}
         loop={true}
         centeredSlides={true}
