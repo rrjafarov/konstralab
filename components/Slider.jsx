@@ -135,6 +135,7 @@ const CareersPageSlider = ({ gallery, t }) => {
         speed={2000}
         loop={true}
         centeredSlides={true}
+        
         modules={[Navigation, Autoplay]}
         navigation={{
           nextEl: ".careersCustom-next",
