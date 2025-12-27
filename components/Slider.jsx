@@ -97,7 +97,6 @@
 
 
 
-
 "use client";
 import Image from "next/image";
 import React from "react";
@@ -105,10 +104,10 @@ import Link from "next/link";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "../app/[locale]/globals.scss";
-import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
 
 Fancybox.bind("[data-fancybox]", {
@@ -118,7 +117,7 @@ Fancybox.bind("[data-fancybox]", {
   },
 });
 
-const CareersPageSlider = ({ gallery, t }) => {
+const CareersPageSliderInner = ({ gallery, t }) => {
   const slidesData = gallery?.data?.data || [];
 
   return (
@@ -135,7 +134,6 @@ const CareersPageSlider = ({ gallery, t }) => {
         speed={2000}
         loop={true}
         centeredSlides={true}
-
         modules={[Navigation, Autoplay]}
         navigation={{
           nextEl: ".careersCustom-next",
@@ -184,7 +182,8 @@ const CareersPageSlider = ({ gallery, t }) => {
   );
 };
 
-export default CareersPageSlider;
+export default CareersPageSliderInner;
+
 
 
 
