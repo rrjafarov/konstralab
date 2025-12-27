@@ -99,7 +99,7 @@
 
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
@@ -110,15 +110,28 @@ import "swiper/css/autoplay";
 import "../app/[locale]/globals.scss";
 import { Autoplay, Navigation } from "swiper/modules";
 
-Fancybox.bind("[data-fancybox]", {
-  dragToClose: false,
-  Image: {
-    zoom: false,
-  },
-});
-
-const CareersPageSliderInner = ({ gallery, t }) => {
+const CareersPageSlider = ({ gallery, t }) => {
+  const [isClient, setIsClient] = useState(false);
   const slidesData = gallery?.data?.data || [];
+
+  useEffect(() => {
+    setIsClient(true);
+    
+    Fancybox.bind("[data-fancybox]", {
+      dragToClose: false,
+      Image: {
+        zoom: false,
+      },
+    });
+
+    return () => {
+      Fancybox.destroy();
+    };
+  }, []);
+
+  if (!isClient) {
+    return null; // və ya loading skeleton
+  }
 
   return (
     <>
@@ -127,7 +140,6 @@ const CareersPageSliderInner = ({ gallery, t }) => {
           {t?.galleryTitle || "Discover the art of precision in construction"}
         </span>
       </div>
-
       <Swiper
         slidesPerView={5}
         spaceBetween={-5}
@@ -182,8 +194,7 @@ const CareersPageSliderInner = ({ gallery, t }) => {
   );
 };
 
-export default CareersPageSliderInner;
-
+export default CareersPageSlider;
 
 
 
