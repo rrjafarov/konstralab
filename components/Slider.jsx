@@ -8,8 +8,6 @@
   import "swiper/css";
   import "swiper/css/navigation";
   import "swiper/css/autoplay";
-  // import "../app/[locale]/globals.scss";
-
   import "@/app/[locale]/globals.scss"
   import { Autoplay, Navigation } from "swiper/modules";
 
@@ -32,7 +30,7 @@
         </div>
         <Swiper
           slidesPerView={5}
-          spaceBetween={20}
+          spaceBetween={-5}
           speed={2000}
           loop={true}
           centeredSlides={true}
