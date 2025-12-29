@@ -100,27 +100,26 @@
 
 "use client";
 
-import React, { useEffect } from "react";
 import Image from "next/image";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Fancybox } from "@fancyapps/ui";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import "../app/[locale]/globals.scss";
 
 const CareersPageSlider = ({ gallery, t }) => {
   const slidesData = gallery?.data?.data || [];
+  const splideRef = useRef(null);
 
   useEffect(() => {
     Fancybox.bind("[data-fancybox]", {
       dragToClose: false,
-      Image: {
-        zoom: false,
-      },
+      Image: { zoom: false },
     });
 
-    return () => {
-      Fancybox.destroy();
-    };
+    return () => Fancybox.destroy();
   }, []);
 
   return (
@@ -131,57 +130,61 @@ const CareersPageSlider = ({ gallery, t }) => {
         </span>
       </div>
 
-      <Swiper
-        slidesPerView={5}
-        spaceBetween={-5}
-        speed={2000}
-        loop
-        centeredSlides
-        modules={[Navigation, Autoplay]}
-        navigation={{
-          nextEl: ".careersCustom-next",
-          prevEl: ".careersCustom-prev",
+      <Splide
+        ref={splideRef}
+        className="mySwiper careersSwiper"
+        options={{
+          type: "loop",
+          perPage: 5,
+          gap: -5,
+          focus: "center",
+          autoplay: true,
+          interval: 2500,
+          speed: 2000,
+          arrows: false,
+          pagination: false,
+          breakpoints: {
+            1280: { perPage: 5 },
+            1024: { perPage: 5 },
+            767: { perPage: 3 },
+            640: { perPage: 3 },
+            480: { perPage: 2 },
+            320: { perPage: 2 },
+          },
         }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        breakpoints={{
-          320: { slidesPerView: 2 },
-          480: { slidesPerView: 2 },
-          640: { slidesPerView: 3 },
-          767: { slidesPerView: 3 },
-          1024: { slidesPerView: 5 },
-          1280: { slidesPerView: 5 },
-        }}
-        className="careersSwiper"
       >
         {slidesData.map((item) =>
           item.gallery.map((imgUrl, idx) => (
-            <SwiperSlide key={`${item.id}-${idx}`}>
+            <SplideSlide key={`${item.id}-${idx}`}>
               <Link
                 href={`https://admin-konstralab.onestudio.az/storage${imgUrl}`}
                 className="careersSliderGalleryImg"
-                data-fancybox="gallery"
+                data-fancybox="videos"
               >
                 <Image
                   src={`https://admin-konstralab.onestudio.az/storage${imgUrl}`}
+                  className="careersSliderCardImg"
                   alt={`slide-${item.id}-${idx}`}
                   width={400}
                   height={400}
-                  className="careersSliderCardImg"
                 />
               </Link>
-            </SwiperSlide>
+            </SplideSlide>
           ))
         )}
-      </Swiper>
+      </Splide>
 
       <div className="careersCustom-navigation">
-        <button className="careersCustom-prev">
+        <button
+          className="careersCustom-prev"
+          onClick={() => splideRef.current?.splide.go("<")}
+        >
           <img src="/icon/careersLeftArrow.svg" alt="" />
         </button>
-        <button className="careersCustom-next">
+        <button
+          className="careersCustom-next"
+          onClick={() => splideRef.current?.splide.go(">")}
+        >
           <img src="/icon/careersRightArrow.svg" alt="" />
         </button>
       </div>
