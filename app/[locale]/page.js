@@ -384,6 +384,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from "react";
 import HomePageClient from "@/components/HomePageClient";
 import { generateMetadata as generateSEO } from "@/lib/seo";
