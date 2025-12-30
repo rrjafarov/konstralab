@@ -131,7 +131,7 @@ const CareersPageSlider = ({ gallery, t }) => {
         className="mySwiper careersSwiper"
         options={{
           type: "loop",
-          perPage: 5,
+          perPage: 4.7,
           gap: -5,
           focus: "center",
           autoplay: true,
@@ -141,8 +141,8 @@ const CareersPageSlider = ({ gallery, t }) => {
           pagination: false,
           updateOnMove: true, // Added this to update active class before transition
           breakpoints: {
-            1280: { perPage: 5 },
-            1024: { perPage: 5 },
+            1280: { perPage: 4.7 },
+            1024: { perPage: 4.7 },
             767: { perPage: 3 },
             640: { perPage: 3 },
             480: { perPage: 2 },
