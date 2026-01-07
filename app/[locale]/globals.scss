@@ -1404,18 +1404,10 @@ ul {
 }
 
 
+// !slider
 
 
 
-
-
-
-
-
-
-
-// CareersPageSlider.scss (və ya eyni faylda SCSS hissəsi)
-/* !slider */
 .sliderSectionTitle {
   padding: 10rem 1rem 6rem;
   display: flex;
@@ -1432,6 +1424,7 @@ ul {
     letter-spacing: -0.046rem;
     max-width: 61.6rem;
     text-align: center;
+
   }
 
   strong {
@@ -1467,6 +1460,7 @@ ul {
     img {
       width: 2.6rem;
       height: 2.6rem;
+
     }
   }
 }
@@ -1512,23 +1506,15 @@ ul {
   object-fit: cover;
   border-radius: 2rem !important;
   background-color: transparent !important;
+
 }
 .careersSwiper {
   margin: 5rem 0;
   overflow: visible;
 }
-
-/* --- ƏSAS DÜZƏLİŞ: production-da spaceBetween işləməyə bilərsə, bu əlavə margin slaydların yapışmasının qarşısını alacaq. --- */
 .careersSwiper .swiper-slide {
   transition: transform 0.3s ease;
-  /* əlavə qaydalar: */
-  box-sizing: border-box;
-  /* production-da Swiper spaceBetween parametri görünməyə bilərsə, margin ilə gap təmin olunur */
-  margin-right: 1rem;
-  /* bəzi hallarda width auto kömək edir */
-  /* width: auto;  -- lazım olsa uncomment edə bilərsən */
 }
-
 .careersSwiper .swiper-slide-active {
   transform: scale(1.2);
   z-index: 10;
@@ -1536,6 +1522,7 @@ ul {
   height: 100%;
   border-radius: 2rem;
   background-color: transparent !important;
+
 }
 .careersSwiper .swiper-slide-next,
 .careersSwiper .swiper-slide-prev {
@@ -1559,181 +1546,7 @@ ul {
 .careersSwiper .swiper-wrapper {
   overflow: visible;
 }
-
-/* (qeyd) əgər əlavə problemlə qarşılaşsan, aşağıdakıları da yoxla:
-   1) Next.js üçün remote image domain konfiqurasiyası next.config.js-də əlavə edilibmi.
-   2) production build zamanı Swiper-in css faylları serverdə daxil olurmu (sənə lazım olsa css import-ları app/layout-a da köçürə bilərik).
-*/
-de
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // !slider
-// .sliderSectionTitle {
-//   padding: 10rem 1rem 6rem;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   text-align: center;
-
-//   span {
-//     color: #131718;
-//     font-size: 4.6rem;
-//     font-style: normal;
-//     font-weight: 600;
-//     line-height: 5rem;
-//     letter-spacing: -0.046rem;
-//     max-width: 61.6rem;
-//     text-align: center;
-
-//   }
-
-//   strong {
-//     color: #FF5F14;
-//     text-align: center;
-//     font-size: 4.6rem;
-//     font-style: normal;
-//     font-weight: 600;
-//     line-height: 5rem;
-//     letter-spacing: -0.046rem;
-//   }
-// }
-// .careersCustom-navigation {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
-//   margin-top: 10.43rem;
-//   margin-bottom: 2rem;
-//   gap: 1rem;
-
-//   button {
-//     width: 6.7rem;
-//     height: 4.2rem;
-//     flex-shrink: 0;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     border-radius: 1.6rem;
-//     border: 1px solid #94A0B2;
-//     background: transparent;
-
-//     img {
-//       width: 2.6rem;
-//       height: 2.6rem;
-
-//     }
-//   }
-// }
-// @media only screen and (max-width: 767.9px) {
-//   .sliderSectionTitle {
-//     padding: 8.3rem 2rem 3rem !important;
-
-//     span {
-//       font-size: 4rem !important;
-//     }
-
-//     strong {
-//       font-size: 4rem !important;
-//     }
-//   }
-
-//   .careersCustom-navigation {
-//     margin-top: 4rem !important;
-//     gap: 1.77rem;
-
-//     button {
-//       width: 8.1396rem !important;
-//       height: 5.5418rem !important;
-//       border-radius: 2.7709rem !important;
-
-//       img {
-//         width: 2.7709rem !important;
-//         height: 2.7709rem !important;
-//       }
-//     }
-//   }
-// }
-// .careersSliderGalleryImg {
-//   width: 100% !important;
-//   height: 47.9154rem !important;
-//   // width: 100%;
-//   border-radius: 2rem !important;
-//   background-color: transparent !important;
-// }
-// .careersSliderCardImg {
-//   width: 100% !important;
-//   height: 100% !important;
-//   object-fit: cover;
-//   border-radius: 2rem !important;
-//   background-color: transparent !important;
-
-// }
-// .careersSwiper {
-//   margin: 5rem 0;
-//   overflow: visible;
-// }
-// .careersSwiper .swiper-slide {
-//   transition: transform 0.3s ease;
-// }
-// .careersSwiper .swiper-slide-active {
-//   transform: scale(1.2);
-//   z-index: 10;
-//   width: 100%;
-//   height: 100%;
-//   border-radius: 2rem;
-//   background-color: transparent !important;
-
-// }
-// .careersSwiper .swiper-slide-next,
-// .careersSwiper .swiper-slide-prev {
-//   transform: scale(1.05);
-//   z-index: 5;
-// }
-// @media (max-width: 768px) {
-//   .careersSwiper .swiper-slide-active {
-//     transform: scale(1.1);
-//   }
-
-//   .careersSwiper .swiper-slide-next,
-//   .careersSwiper .swiper-slide-prev {
-//     transform: scale(1.02);
-//   }
-// }
-// .careersCustom-navigation {
-//   position: relative;
-//   z-index: 20;
-// }
-// .careersSwiper .swiper-wrapper {
-//   overflow: visible;
-// }
-// !slider
-
-
-
-
-
-
-
 
 
 
