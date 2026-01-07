@@ -38,7 +38,6 @@ const About = ({ about ,t }) => {
               ref={imageRef}
             >
               <Image
-                // src="/images/aboutSectionImage.png"
                 src={`https://admin-konstralab.onestudio.az/storage${aboutData.image}`}
                 alt="about"
                 height={600}
@@ -46,6 +45,8 @@ const About = ({ about ,t }) => {
               />
             </div>
           </div>
+
+
           <div className="xl-6 lg-6 md-6 sm-12" id="topRow">
             <div className="aboutSectionContent">
               <span>{t?.about || "about us"}</span>
