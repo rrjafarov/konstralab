@@ -148,7 +148,8 @@ export default function CardScatter({ production, t }) {
               {/* Artık buraya API’den gelen icon’u kullanıyoruz */}
               <Image
                 // src={item.icon}
-                src={`https://admin-konstralab.onestudio.az/storage${item.icon}`}
+                // src={`https://admin-konstralab.onestudio.az/storage${item.icon}`}
+                src={`${process.env.NEXT_PUBLIC_IMG_URL}${item.icon}`}
                 alt={`${item.title} icon`}
                 width={40}
                 height={40}

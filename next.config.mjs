@@ -14,6 +14,11 @@ const nextConfig = {
         hostname: "admin-konstralab.onestudio.az",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "admin.konstralab.az",
+        pathname: "/**",
+      },
     ],
   },
 

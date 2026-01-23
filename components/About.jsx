@@ -38,7 +38,8 @@ const About = ({ about ,t }) => {
               ref={imageRef}
             >
               <Image
-                src={`https://admin-konstralab.onestudio.az/storage${aboutData.image}`}
+                // src={`https://admin-konstralab.onestudio.az/storage${aboutData.image}`}
+                src={`${process.env.NEXT_PUBLIC_IMG_URL}${aboutData.image}`}
                 alt="about"
                 height={600}
                 width={650}

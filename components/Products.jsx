@@ -161,7 +161,8 @@ const Products = ({ products }) => {
               <div className="productsCardImage">
                 <Image
                   // src="/images/boardImg.png"
-                  src={`https://admin-konstralab.onestudio.az/storage${product.image}`}
+                  // src={`https://admin-konstralab.onestudio.az/storage${product.image}`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_URL}${product.image}`}
                   alt="board"
                   width={300}
                   height={100}
@@ -191,7 +192,8 @@ const Products = ({ products }) => {
         <div className="productsSliderCardImage">
           <Image
             // src="/images/boardImg.png"
-            src={`https://admin-konstralab.onestudio.az/storage${product.image}`}
+            // src={`https://admin-konstralab.onestudio.az/storage${product.image}`}
+            src={`${process.env.NEXT_PUBLIC_IMG_URL}${product.image}`}
             alt="board"
             width={300}
             height={100}

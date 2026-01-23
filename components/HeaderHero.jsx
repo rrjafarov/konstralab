@@ -141,7 +141,8 @@ const HeaderHero = ({ entryPage, contact,t }) => {
             .map((item) => (
               <video
                 key={item.id}
-                src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
+                // src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
+                src={`${process.env.NEXT_PUBLIC_IMG_URL}${item.video}`}
                 autoPlay
                 muted
                 loop

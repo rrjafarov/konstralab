@@ -223,12 +223,14 @@ const CareersPageSlider = ({ gallery, t }) => {
               style={getSlideStyle(index)}
             >
               <Link
-                href={`https://admin-konstralab.onestudio.az/storage${slide.url}`}
+                // href={`https://admin-konstralab.onestudio.az/storage${slide.url}`}
+                href={`${process.env.NEXT_PUBLIC_IMG_URL}${slide.url}`}
                 className="careersSliderGalleryImg"
                 data-fancybox="videos"
               >
                 <Image
-                  src={`https://admin-konstralab.onestudio.az/storage${slide.url}`}
+                  // src={`https://admin-konstralab.onestudio.az/storage${slide.url}`}
+                  src={`${process.env.NEXT_PUBLIC_IMG_URL}${slide.url}`}
                   className="careersSliderCardImg"
                   alt={`slide-${slide.id}`}
                   width={400}

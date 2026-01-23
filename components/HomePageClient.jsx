@@ -297,7 +297,8 @@ export default function HomePageClient() {
             .map((item) => (
               <video
                 key={item.id}
-                src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
+                // src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
+                src={`${process.env.NEXT_PUBLIC_IMG_URL}${item.video}`}
                 autoPlay
                 muted
                 loop
@@ -315,6 +316,7 @@ export default function HomePageClient() {
             </span>
           </div>
         </div>
+        // 768 33 33 
       )}
 
       {!showOverlay && (
