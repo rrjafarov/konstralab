@@ -592,7 +592,9 @@ ul {
               width: 0;
               height: 2px;
               background-color: #08316f;
-              transition: width 0.4s ease, left 0.4s ease;
+              transition:
+                width 0.4s ease,
+                left 0.4s ease;
             }
 
             &:hover::before {
@@ -1115,7 +1117,8 @@ ul {
 
 .brandsSection {
   margin: 6.1rem 0 4rem 0;
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       to bottom,
       rgba(11, 30, 60, 0.85),
       rgba(11, 30, 60, 0.7),
@@ -1544,21 +1547,6 @@ ul {
 //   overflow: visible;
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .sliderSectionTitle {
   padding: 10rem 1rem 6rem;
   display: flex;
@@ -1577,14 +1565,18 @@ ul {
 .careersCustom-navigation {
   display: flex;
   justify-content: center;
-  margin-top: 10.43rem;
+  margin-top: 2.48rem;
   gap: 1rem;
 
   button {
-    width: 6.7rem;
+    width: 5.7rem;
     height: 4.2rem;
+    width: 4.7rem;
+    height: 3.2rem;
     border-radius: 1.6rem;
-    border: 1px solid #94a0b2;
+    // border: 1px solid #94a0b2;
+    border: 1px solid rgba(148, 160, 178, 0.3);
+
     background: transparent;
     display: flex;
     justify-content: center;
@@ -1594,11 +1586,12 @@ ul {
 
     &:hover {
       background: #f5f5f5;
+
     }
 
     img {
-      width: 2.6rem;
-      height: 2.6rem;
+      width: 1.6rem;
+      height: 1.6rem;
     }
   }
 }
@@ -1668,34 +1661,6 @@ ul {
     height: 38rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // !slider
 
@@ -1794,61 +1759,10 @@ ul {
 //   z-index: 5;
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // !slider
 
 .contactBackground {
-  margin-top: 10rem;
+  margin-top: 7rem;
   background-image: url("../../public//images/contactBackgrounds.jpg");
   background-size: cover;
   background-position: center;
@@ -1987,11 +1901,6 @@ ul {
   }
 }
 
-
-
-
-
-
 //! Footer
 .footerBackground {
   background: #191919;
@@ -2042,7 +1951,9 @@ ul {
           width: 0;
           height: 2px;
           background-color: #fff;
-          transition: width 0.4s ease, left 0.4s ease;
+          transition:
+            width 0.4s ease,
+            left 0.4s ease;
         }
 
         &:hover::before {
