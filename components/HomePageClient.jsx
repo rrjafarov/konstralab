@@ -157,50 +157,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import Cookies from "js-cookie";
-import axiosInstance from "@/lib/axios";
 import Image from "next/image";
 
 import About from "@/components/About";
@@ -212,53 +170,21 @@ import HeaderHero from "@/components/HeaderHero";
 import MobileHoverCards from "@/components/MobileHoverCards";
 import Slider from "@/components/Slider";
 
-async function getTranslations() {
-  try {
-    const response = await axiosInstance.get("/translation-list");
-    return response;
-  } catch (err) {}
-}
-
-export default function HomePageClient() {
+export default function HomePageClient({
+  translations,
+  about,
+  contact,
+  gallery,
+  entryPage,
+  brands,
+  products,
+  production,
+}) {
   const [showOverlay, setShowOverlay] = useState(true);
   const [isFading, setIsFading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [about, setAbout] = useState(null);
-  const [contact, setContact] = useState(null);
-  const [gallery, setGallery] = useState(null);
-  const [entryPage, setEntryPage] = useState(null);
-  const [brands, setBrands] = useState(null);
-  const [products, setProducts] = useState(null);
-  const [production, setProduction] = useState(null);
-  const [translations, setTranslations] = useState(null);
 
   const t = translations?.data;
-
-  useEffect(() => {
-    async function loadTranslations() {
-      const result = await getTranslations();
-      if (result) setTranslations(result);
-    }
-    loadTranslations();
-  }, []);
-
-  const fetchPageData = async (endpoint, setState) => {
-    const lang = Cookies.get("NEXT_LOCALE") || "en";
-    try {
-      const { data } = await axiosInstance.get(`/page-data/${endpoint}`, {
-        headers: { Lang: lang },
-      });
-      setState(data);
-    } catch (err) {}
-  };
-
-  useEffect(() => { fetchPageData("about", setAbout); }, []);
-  useEffect(() => { fetchPageData("contact", setContact); }, []);
-  useEffect(() => { fetchPageData("gallery", setGallery); }, []);
-  useEffect(() => { fetchPageData("entry-page", setEntryPage); }, []);
-  useEffect(() => { fetchPageData("brands", setBrands); }, []);
-  useEffect(() => { fetchPageData("products", setProducts); }, []);
-  useEffect(() => { fetchPageData("production", setProduction); }, []);
 
   useEffect(() => {
     const checkIsMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -273,7 +199,6 @@ export default function HomePageClient() {
   }, []);
 
   const handleOverlayClick = useCallback(() => {
-    // Eyni finish funksiyasını çağırırıq
     finish();
   }, [finish]);
 
@@ -297,7 +222,6 @@ export default function HomePageClient() {
             .map((item) => (
               <video
                 key={item.id}
-                // src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
                 src={`${process.env.NEXT_PUBLIC_IMG_URL}${item.video}`}
                 autoPlay
                 muted
@@ -316,7 +240,6 @@ export default function HomePageClient() {
             </span>
           </div>
         </div>
-        // 768 33 33 
       )}
 
       {!showOverlay && (
@@ -349,3 +272,197 @@ export default function HomePageClient() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ! ESAS KOD
+
+
+
+// "use client";
+// import React, { useState, useEffect, useCallback } from "react";
+// import Cookies from "js-cookie";
+// import axiosInstance from "@/lib/axios";
+// import Image from "next/image";
+
+// import About from "@/components/About";
+// import Brands from "@/components/Brands";
+// import Cards from "@/components/Cards";
+// import Contact from "@/components/Contact";
+// import Footer from "@/components/Footer";
+// import HeaderHero from "@/components/HeaderHero";
+// import MobileHoverCards from "@/components/MobileHoverCards";
+// import Slider from "@/components/Slider";
+
+// async function getTranslations() {
+//   try {
+//     const response = await axiosInstance.get("/translation-list");
+//     return response;
+//   } catch (err) {}
+// }
+
+// export default function HomePageClient() {
+//   const [showOverlay, setShowOverlay] = useState(true);
+//   const [isFading, setIsFading] = useState(false);
+//   const [isMobile, setIsMobile] = useState(false);
+//   const [about, setAbout] = useState(null);
+//   const [contact, setContact] = useState(null);
+//   const [gallery, setGallery] = useState(null);
+//   const [entryPage, setEntryPage] = useState(null);
+//   const [brands, setBrands] = useState(null);
+//   const [products, setProducts] = useState(null);
+//   const [production, setProduction] = useState(null);
+//   const [translations, setTranslations] = useState(null);
+
+//   const t = translations?.data;
+
+//   useEffect(() => {
+//     async function loadTranslations() {
+//       const result = await getTranslations();
+//       if (result) setTranslations(result);
+//     }
+//     loadTranslations();
+//   }, []);
+
+//   const fetchPageData = async (endpoint, setState) => {
+//     const lang = Cookies.get("NEXT_LOCALE") || "en";
+//     try {
+//       const { data } = await axiosInstance.get(`/page-data/${endpoint}`, {
+//         headers: { Lang: lang },
+//       });
+//       setState(data);
+//     } catch (err) {}
+//   };
+
+//   useEffect(() => { fetchPageData("about", setAbout); }, []);
+//   useEffect(() => { fetchPageData("contact", setContact); }, []);
+//   useEffect(() => { fetchPageData("gallery", setGallery); }, []);
+//   useEffect(() => { fetchPageData("entry-page", setEntryPage); }, []);
+//   useEffect(() => { fetchPageData("brands", setBrands); }, []);
+//   useEffect(() => { fetchPageData("products", setProducts); }, []);
+//   useEffect(() => { fetchPageData("production", setProduction); }, []);
+
+//   useEffect(() => {
+//     const checkIsMobile = () => setIsMobile(window.innerWidth <= 768);
+//     checkIsMobile();
+//     window.addEventListener("resize", checkIsMobile);
+//     return () => window.removeEventListener("resize", checkIsMobile);
+//   }, []);
+
+//   const finish = useCallback(() => {
+//     setIsFading(true);
+//     setTimeout(() => setShowOverlay(false), 500);
+//   }, []);
+
+//   const handleOverlayClick = useCallback(() => {
+//     // Eyni finish funksiyasını çağırırıq
+//     finish();
+//   }, [finish]);
+
+//   useEffect(() => {
+//     const handleWheel = () => finish();
+//     const handleTouchMove = () => finish();
+//     window.addEventListener("wheel", handleWheel, { passive: true });
+//     window.addEventListener("touchmove", handleTouchMove, { passive: true });
+//     return () => {
+//       window.removeEventListener("wheel", handleWheel);
+//       window.removeEventListener("touchmove", handleTouchMove);
+//     };
+//   }, [finish]);
+
+//   return (
+//     <>
+//       {showOverlay && (
+//         <div className={`introOverlay${isFading ? " fadeOut" : ""}`}>
+//           {entryPage?.data?.data
+//             ?.filter((item) => item.video)
+//             .map((item) => (
+//               <video
+//                 key={item.id}
+//                 // src={`https://admin-konstralab.onestudio.az/storage${item.video}`}
+//                 src={`${process.env.NEXT_PUBLIC_IMG_URL}${item.video}`}
+//                 autoPlay
+//                 muted
+//                 loop
+//                 className="introGif"
+//               />
+//             ))}
+//           <div className="gifOverlay" />
+//           <div className="overlayText">
+//             <Image src="/icon/logoKonstralab.svg" alt="logo" width={350} height={300} />
+//           </div>
+//           <div className="overlayScrool" onClick={handleOverlayClick} style={{ cursor: 'pointer' }}>
+//             <span>
+//               {t?.scroll || "Scroll"}
+//               <img src="/icon/bottomDown.svg" alt="down arrow" />
+//             </span>
+//           </div>
+//         </div>
+//         // 768 33 33 
+//       )}
+
+//       {!showOverlay && (
+//         <main>
+//           {isMobile && <HeaderHero t={t} className="showMobile" contact={contact} entryPage={entryPage} />}
+//           <div className="container">
+//             {!isMobile && <HeaderHero t={t} className="notShowMobile" contact={contact} entryPage={entryPage} />}
+//             <About t={t} about={about} />
+//             <MobileHoverCards t={t} production={production} />
+//             <Cards t={t} production={production} />
+//           </div>
+
+//           <div id="products">
+//             <Brands t={t} products={products} brands={brands} />
+//           </div>
+
+//           <div id="gallery">
+//             <Slider t={t} gallery={gallery} />
+//           </div>
+//           <div className="contactBackground">
+//             <div className="container" id="contact">
+//               <Contact t={t} contact={contact} />
+//             </div>
+//           </div>
+//           <div className="footerBackground">
+//             <Footer t={t} contact={contact} />
+//           </div>
+//         </main>
+//       )}
+//     </>
+//   );
+// }

@@ -379,11 +379,67 @@
 
 
 
+// import React from "react";
+// import HomePageClient from "@/components/HomePageClient";
+// import { generateMetadata as generateSEO } from "@/lib/seo";
+// import axiosInstance from "@/lib/axios";
+// import { cookies } from "next/headers";
 
+// export async function generateMetadata() {
+//   return generateSEO();
+// }
 
+// async function safeGet(url, headers = {}) {
+//   try {
+//     const res = await axiosInstance.get(url, { headers });
+//     return res.data ?? null;
+//   } catch (err) {
+//     // Konsola error yazmaq istəyirsənsə aktiv et
+//     // console.error(`Failed to fetch ${url}`, err);
+//     return null;
+//   }
+// }
 
+// export default async function Page() {
+//   const cookieStore = cookies();
+//   const langCookie = cookieStore.get("NEXT_LOCALE");
+//   const lang = langCookie?.value || "en";
 
+//   // paralel fetch — daha sürətli
+//   const [
+//     translations,
+//     about,
+//     contact,
+//     gallery,
+//     entryPage,
+//     brands,
+//     products,
+//     production,
+//   ] = await Promise.all([
+//     safeGet("/translation-list"),
+//     safeGet("/page-data/about", { Lang: lang }),
+//     safeGet("/page-data/contact", { Lang: lang }),
+//     safeGet("/page-data/gallery", { Lang: lang }),
+//     safeGet("/page-data/entry-page", { Lang: lang }),
+//     safeGet("/page-data/brands", { Lang: lang }),
+//     safeGet("/page-data/products", { Lang: lang }),
+//     safeGet("/page-data/production", { Lang: lang }),
+//   ]);
 
+//   // props-ları client komponentə ötürürük
+//   return (
+//     <HomePageClient
+//       translations={translations}
+//       about={about}
+//       contact={contact}
+//       gallery={gallery}
+//       entryPage={entryPage}
+//       brands={brands}
+//       products={products}
+//       production={production}
+//     />
+//   );
+// }
 
 
 
@@ -412,13 +468,107 @@
 import React from "react";
 import HomePageClient from "@/components/HomePageClient";
 import { generateMetadata as generateSEO } from "@/lib/seo";
+import { cookies } from "next/headers";
+import axiosInstance from "@/lib/axios";
 
 export async function generateMetadata() {
   return generateSEO();
 }
 
-// Page component - Server-side
 export default async function Page() {
-  // Burada server-side data fetch etmək lazım deyil, çünki client component özü fetch edir
-  return <HomePageClient />;
+  const cookieStore = cookies();
+  const lang = cookieStore.get("NEXT_LOCALE")?.value || "en";
+
+  async function fetchTranslations() {
+    try {
+      const response = await axiosInstance.get("/translation-list");
+      return { data: response.data };
+    } catch (err) {
+      console.error("Error fetching translations:", err);
+      return null;
+    }
+  }
+
+  async function fetchPageData(endpoint) {
+    try {
+      const response = await axiosInstance.get(`/page-data/${endpoint}`, {
+        headers: { Lang: lang },
+      });
+      return response.data;
+    } catch (err) {
+      console.error(`Error fetching ${endpoint}:`, err);
+      return null;
+    }
+  }
+
+  const [
+    translations,
+    about,
+    contact,
+    gallery,
+    entryPage,
+    brands,
+    products,
+    production,
+  ] = await Promise.all([
+    fetchTranslations(),
+    fetchPageData("about"),
+    fetchPageData("contact"),
+    fetchPageData("gallery"),
+    fetchPageData("entry-page"),
+    fetchPageData("brands"),
+    fetchPageData("products"),
+    fetchPageData("production"),
+  ]);
+
+  return (
+    <HomePageClient
+      translations={translations}
+      about={about}
+      contact={contact}
+      gallery={gallery}
+      entryPage={entryPage}
+      brands={brands}
+      products={products}
+      production={production}
+    />
+  );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// !  ESAS KOD BUDUR
+
+
+// import React from "react";
+// import HomePageClient from "@/components/HomePageClient";
+// import { generateMetadata as generateSEO } from "@/lib/seo";
+
+// export async function generateMetadata() {
+//   return generateSEO();
+// }
+
+// // Page component - Server-side
+// export default async function Page() {
+//   // Burada server-side data fetch etmək lazım deyil, çünki client component özü fetch edir
+//   return <HomePageClient />;
+// }
