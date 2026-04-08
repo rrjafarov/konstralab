@@ -160,7 +160,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-
 import About from "@/components/About";
 import Brands from "@/components/Brands";
 import Cards from "@/components/Cards";
